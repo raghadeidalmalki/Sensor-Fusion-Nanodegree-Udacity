@@ -1,4 +1,3 @@
-/* \author Aaron Brown */
 // Quiz on implementing kd tree
 
 #include "../../render/render.h"
@@ -102,7 +101,3 @@ void searchHelper(std::vector<float> target, Node* node, uint depth, float dista
 	
 
 };
-
-
-
-
