@@ -12,12 +12,18 @@ To use the library in your code, the following header has to be included:
 #include "opencv2/core/core.hpp"
 ```
 The highgui module contains user interface functions that can be used to display images or take simple user input. To use the library in your code, the following header has to be included:
-```#include "opencv2/highgui/highgui.hpp"```
+```
+#include "opencv2/highgui/highgui.hpp"
+```
 In this project, basic functions such as ```cv::imshow``` will be used to display images in a window.
 The imgproc (image processing) module contains basic transformations on images, such as image filtering, geometric transformations, feature detection and tracking. To use the library in your code, the following header has to be included:
-```#include "opencv2/imgproc/imgproc.hpp"```
+```
+#include "opencv2/imgproc/imgproc.hpp"
+```
 The features2d module contains algorithms for detecting, describing, and matching keypoints between images. To use the library in your code, the following header has to be included:
-```#include "opencv2/features2d/features2d.hpp"```
+```
+#include "opencv2/features2d/features2d.hpp"
+```
 
 ## The OpenCV Matrix Datatype
 The basic data type in OpenCV to store and manipulate images is the ```cv::Mat datatype```. It can be used for arrays of any number of dimensions. The data stored in ```cv::Mat``` is arranged in a so-called raster scan order. For a two-dimensional array (such as a grayscale image), this means that the data is organized into rows, and each row appears one after the other. A three-dimensional array (e.g. a color image) is arranged in planes, where each plane is filled out row by row, and then the planes are packed one after the other.
