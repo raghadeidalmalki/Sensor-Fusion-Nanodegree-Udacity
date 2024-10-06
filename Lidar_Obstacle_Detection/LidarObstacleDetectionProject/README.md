@@ -2,7 +2,6 @@
 
 <img src="https://github.com/awbrown90/SensorFusionHighway/blob/master/media/ObstacleDetectionFPS.gif" width="700" height="400" />
 
-
 ## Installation
 
 ### Linux Ubuntu 16
@@ -18,4 +17,3 @@ A few updates to the instructions above were needed.
 
 * BUILD_visualization needed to be manually turned on, this link shows you how to do that,
 http://www.pointclouds.org/documentation/tutorials/building_pcl.php
-
