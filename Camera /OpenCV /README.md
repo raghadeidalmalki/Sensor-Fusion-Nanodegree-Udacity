@@ -1,4 +1,4 @@
-# OpenCV: OpenCV Library Overview
+# OpenCV Library Overview
 
 ![image](https://github.com/user-attachments/assets/d7c28ef2-0287-4acb-afaa-52365d0e170c)
 
