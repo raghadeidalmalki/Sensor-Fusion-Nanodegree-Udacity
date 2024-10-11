@@ -109,6 +109,7 @@ In recent years, a number of faster detectors have been developed which aim at r
 ### Detectors vs Descriptors
 
 •	A keypoint detector is an algorithm that chooses points from an image based on a local maximum of a function, such as the "cornerness" metric with the Harris detector. Keypoints are also known as referred to as interest points or salient points.
+
 •	A descriptor is a vector of values, which describes the image patch around a keypoint. Techniques for generating descriptors range from comparing raw pixel values to more advanced methods like histograms of gradient orientations.
 Descriptors help us to assign similar keypoints in different images to each other. As shown in the figure below, a set of keypoints in one frame is assigned keypoints in another frame such that the similarity of their respective descriptors is maximized and (ideally) the keypoints represent the same object in the image. In addition to maximizing similarity, a good descriptor should also be able to minimize the number of mismatches, i.e. avoid assigning keypoints that do not correspond to the same object.
 
