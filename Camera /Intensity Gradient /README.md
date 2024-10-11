@@ -178,7 +178,7 @@ The result can be seen below : The brighter a pixel, the higher the Harris corne
 
 ![image](https://github.com/user-attachments/assets/1d514b64-bd80-4cee-8b17-d49b2f01c3f1)
 
-In order to locate corners, we now have to perform a non-maxima suppression (NMS) to:
+In order to locate corners, we now have to perform a **non-maxima suppression (NMS)** to:
 
 - Ensure that we get the pixel with maximum cornerness in a local neighborhood and
 - Prevent corners from being too close to each other as we prefer an even spread of corners throughout the image.
