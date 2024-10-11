@@ -28,14 +28,3 @@ A filter kernel for Gaussian smoothing is shown in the next figure. The figure s
 
 
 ![image](https://github.com/user-attachments/assets/820a1345-9770-4291-98c4-c505877cbe4d)
-
-#### Illustration of Applying Derivatives for Edge Detection
-
-We apply the first and second derivatives to the intensity curve obtained by comparing the intensity values, resulting in a curve like the one given below:
-
-
-![image](https://github.com/user-attachments/assets/69320a18-d19a-4a6f-afa6-c8a228478f93)
-
-For the first derivative, the locations of edges are determined by their local extrema. For the second derivative, the locations of the edges are determined by their zero crossings.
-
-
