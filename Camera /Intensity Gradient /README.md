@@ -185,3 +185,24 @@ In order to locate corners, we now have to perform a **non-maxima suppression (N
 
 In nms_example.cpp the code example illustrates the basic principle behind non-maximum suppression. The idea is to reduce the intensities (e.g. corner response) in a local neighborhood in such a way that only the strongest response remains. 
 
+### Disadvantages of the Harris Detector
+One of the disadvantages of the Harris detector is that it does not work well with certain transformations of the image content. These might be rotations or scale (i.e. size) changes or even perspective transformations.
+
+## Overview of Popular Keypoint Detectors
+Keypoint detectors are a very popular research area and thus a large number of powerful algorithms have been developed over the years. Applications of keypoint detection include such things as object recognition and tracking, image matching and panoramic stitching as well as robotic mapping and 3D modeling. Detectors can be compared for their detection performance and their processing speed.
+
+The Harris detector along with several other "classics" belongs to a group of traditional detectors, which aim at maximizing detection accuracy. In this group, computational complexity is not a primary concern. The following list shows a number of popular classic detectors:
+
+- 1988 Harris Corner Detector (Harris, Stephens)
+- 1996 Good Features to Track (Shi, Tomasi)
+- 1999 Scale Invariant Feature Transform (Lowe)
+- 2006 Speeded Up Robust Features (Bay, Tuytelaars, Van Gool)
+
+In recent years, a number of faster detectors have been developed which aim at real-time applications on smartphones and other portable devices. The following list shows the most popular detectors belonging to this group:
+
+- 2006 Features from Accelerated Segment Test (FAST) (Rosten, Drummond)
+- 2010 Binary Robust Independent Elementary Features (BRIEF) (Calonder, et al.)
+- 2011 Oriented FAST and Rotated BRIEF (ORB) (Rublee et al.)
+- 2011 Binary Robust Invariant Scalable Keypoints (BRISK) (Leutenegger, Chli, Siegwart)
+- 2012 Fast Retina Keypoint (FREAK) (Alahi, Ortiz, Vandergheynst)
+- 2012 KAZE (Alcantarilla, Bartoli, Davidson)
