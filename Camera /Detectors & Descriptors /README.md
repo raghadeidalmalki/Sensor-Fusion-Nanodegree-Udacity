@@ -123,7 +123,7 @@ One of the best-known examples of the HOG family is the Scale-Invariant Feature 
 Currently, the most popular binary descriptors are BRIEF, BRISK, ORB, FREAK, and KAZE (all available in the OpenCV library). 
 
 
-#### Scale-Invariant Feature Transform (SIFT)
+#### Scale-Invariant Feature Transform (SIFT):
 The Scale-Invariant Feature Transform (SIFT) was introduced in [1999 by David Lowe](https://home.cis.rit.edu/~cnspci/references/dip/feature_extraction/lowe1999.pdf).  SIFT combines a keypoint detector and a descriptor, and it operates through a five-step process, which is briefly summarized below.
 
 1.	The initial step involves detecting keypoints in the image using a method known as "Laplacian-of-Gaussian (LoG)," which relies on second-order intensity derivatives. The LoG is applied across multiple scales of the image, primarily detecting blobs rather than corners. Along with a distinct scale level, keypoints are also assigned an orientation based on the intensity gradients in a local neighborhood around the keypoint.
@@ -162,7 +162,7 @@ From a high-level perspective, binary descriptors consist of three major parts:
 2.	A method for orientation compensation, which removes the influence of rotation of the image patch around a keypoint location.
 3.	A method for sample-pair selection, which generates pairs of sample points which are compared based on their intensity values. If the intensity of the first point is greater than that of the second, a '1' is added to the binary string; otherwise, a '0' is added. After comparing all point pairs in the sampling pattern, a complete binary string is formed (hence the family name of this descriptor class).
 
-#### Binary Robust Invariant Scalable Keypoints (BRISK)
+#### Binary Robust Invariant Scalable Keypoints (BRISK):
 BRISK is a keypoint detection method that combines a FAST-based detector with a binary descriptor, which is generated through intensity comparisons from a specific sampling of each keypoint's neighborhood. Points of interest are identified across both the image and scale dimensions using a saliency criterion similar to the AGAST method.
 
 The sampling pattern of BRISK is composed of a number of sample points (blue), where a concentric ring (red) around each sample point denotes an area where Gaussian smoothing is applied to avoid aliasing. As opposed to some other binary descriptors such as ORB or BRIEF, the BRISK sampling pattern is fixed. 
