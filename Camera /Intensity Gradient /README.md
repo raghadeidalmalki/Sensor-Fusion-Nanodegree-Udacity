@@ -183,3 +183,5 @@ In order to locate corners, we now have to perform a **non-maxima suppression (N
 - Ensure that we get the pixel with maximum cornerness in a local neighborhood and
 - Prevent corners from being too close to each other as we prefer an even spread of corners throughout the image.
 
+In nms_example.cpp the code example illustrates the basic principle behind non-maximum suppression. The idea is to reduce the intensities (e.g. corner response) in a local neighborhood in such a way that only the strongest response remains. 
+
