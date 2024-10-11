@@ -193,7 +193,7 @@ Based on g, we can use the direction of the sample pattern to rearrange the shor
 
 After computing the orientation angle of the keypoint from g, we use it to make the short-distance pairings invariant to rotation. Then, the intensity between all pairs in SS is compared and used to assemble the binary descriptor we can use for matching.
 
-#### Oriented FAST and Rotated BRIEF (ORB)
+#### Oriented FAST and Rotated BRIEF (ORB):
 
 ORB is a combination of a keypoint detector and descriptor algorithms. It works in two steps:
 1.	Keypoint detection using FAST - ORB starts by finding keypoints. Once the key points in the image had been located, ORB then calculates a corresponding feature vector for each keypoint in the image. The ORB algorithm creates feature vectors that only contain ones and zeros. For this reason, they're called the binary feature vectors.
