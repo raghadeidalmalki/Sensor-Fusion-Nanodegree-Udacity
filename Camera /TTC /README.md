@@ -28,4 +28,4 @@ To derive a stable TTC measurement from the given point cloud, two main steps ha
 ![image](https://github.com/user-attachments/assets/6362f437-40ea-4f12-8538-e3e70fc69beb)
 ![image](https://github.com/user-attachments/assets/72844ec6-470a-4b42-b251-8e0e0fad1de9)
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/6362f437-40ea-4f12-8538-e3e70fc69beb">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/6362f437-40ea-4f12-8538-e3e70fc69beb">
