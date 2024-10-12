@@ -8,7 +8,7 @@ All velocities referenced in the models below represent the relative velocities 
 ## Constant Velocity Model (CVM) 
 To compute the TTC, we need to make assumptions on the physical behavior of the preceding vehicle. One assumption could be that the relative velocity between the yellow and green vehicle in the above figure were constant. This would lead to the so-called constant velocity model (CVM) which is represented by eq. 1 in the following diagram.
 
-![image](https://github.com/user-attachments/assets/1ae7b746-746e-4b8d-a997-1a80d42d9e0d)
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/1ae7b746-746e-4b8d-a997-1a80d42d9e0d">
 
 Types of motion models possible:
 1.	Constant velocity model (CVM) - The one we will be working on.
@@ -17,7 +17,7 @@ Types of motion models possible:
 
 Based on the constant-velocity model, the velocity v0 can be computed from two successive Lidar measurements as follows: 
 
-![image](https://github.com/user-attachments/assets/6f88d5ba-7ace-4b03-9393-258f07b78f5a)
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/6f88d5ba-7ace-4b03-9393-258f07b78f5a">
 
 Once the relative velocity v0 is determined, the time to collision (TTC) can be calculated by dividing the remaining distance between the two vehicles by v0. With a Lidar sensor capable of precise distance measurements, a TTC estimation system can be developed using a Constant Velocity Model (CVM) along with the equations outlined above. However, it's important to note that a radar sensor would be a more effective solution for TTC calculation, as it can directly measure the relative speed. In contrast, using a Lidar sensor requires computing v0 from two (and potentially noisy) distance measurements.
 
