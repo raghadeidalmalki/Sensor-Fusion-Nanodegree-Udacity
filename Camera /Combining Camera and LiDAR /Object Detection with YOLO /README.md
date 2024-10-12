@@ -18,6 +18,7 @@ Unlike classifier-based systems like HOG/SVM, YOLO analyzes the entire image, al
 
 
 **Step 1: Initialize the Parameters**
+
 Every bounding box predicted by YOLOv3 is associated with a confidence score. The parameter 'confThreshold' is used to remove all bounding boxes with a lower score value.
 
 Then, a non-maximum suppression is applied to the remaining bounding boxes. The NMS procedure is controlled by the parameter ‘nmsThreshold‘.
@@ -25,9 +26,8 @@ Then, a non-maximum suppression is applied to the remaining bounding boxes. The 
 The size of the input image is controlled by the parameters ‘inpWidth‘ and ‘inpHeight‘, which is set to 416 as proposed by the YOLO authors. Other values could e.g. be 320 (faster) or 608 (more accurate).
 
 **Step 2: Prepare the Model**
-The file 'yolov3.weights' contains the **pre-trained network’s weights** and has been made available by the authors of YOLO
 
-The file 'yolov3.cfg' containing the **network configuration** is available for download, and the coco.names file which contains the 80 different **class names** used in the COCO dataset can be downloaded.
+The 'yolov3.weights' file contains the **pre-trained network’s weights**, the 'yolov3.cfg' file containing the **network configuration**, and the coco.names file contains the 80 different **class names** used in the COCO dataset (all can be found in the dat/yolo folder)
 
 The following code shows how to load the model weights as well as the associated model configuration:
 
@@ -54,6 +54,7 @@ The following code shows how to load the model weights as well as the associated
 ***After loading the network, the DNN backend is set to DNN_BACKEND_OPENCV. If OpenCV is built with Intel’s Inference Engine, DNN_BACKEND_INFERENCE_ENGINE should be used instead. The target is set to CPU in the code, as opposed to using DNN_TARGET_OPENCL, which would be the method of choice if a (Intel) GPU was available.***
 
 **Step 3: Generate 4D Blob from Input Image**
+
 As data flows through the network, YOLO stores, communicates, and manipulates the information as **"blobs":** the blob is the standard array and unified memory interface for many frameworks, including Caffe. A blob is a wrapper over the actual data being processed and passed along and also provides synchronization capability between the CPU and the GPU. Mathematically, a blob is an N-dimensional array stored in a C-contiguous fashion. The conventional blob dimensions for batches of image data are number N x channel C x height H x width W. In this nomenclature, N is the batch size of the data. Batch processing achieves better throughput for communication and device processing. For a training batch of 256 images, N would be 256. The parameter C represents the feature dimension, e.g. for RGB images C = 3. In OpenCV, blobs are stored as 4-dimensional ```cv::Mat``` array with NCHW dimensions order. More details on blobs can be found [here](https://caffe.berkeleyvision.org/tutorial/net_layer_blob.html)
 
 The following example illustrates the memory structure of a blob with N=2, C=16 channels and height H=5 / width W=4.
@@ -74,6 +75,7 @@ The code below shows how an image loaded from the file is passed through the blo
 ```
 Later in the code, the output blob is passed as input to the network, followed by a forward pass to generate a list of predicted bounding boxes. These bounding boxes then undergo a post-processing step to filter out those with low confidence scores. Let's examine these steps in more detail.
 
+**Step 4: Run Forward Pass Through the Network**
 
 Next, we need to pass the blob we just created to the network as input. Then, we execute the forward function in OpenCV to perform a single forward pass through the network. To do this, we must identify the last layer of the network and provide its corresponding internal names to the function. This can be accomplished using the OpenCV function ```getUnconnectedOutLayers```, which retrieves the names of all unconnected output layers, effectively representing the last layers of the network. The following code demonstrates how to achieve this:
 
@@ -141,6 +143,7 @@ Applying the YOLOv3 algorithm to our highway image provides the following result
 As can be seen, the car in the left lane is covered by two bounding boxes of similar size. To avoid the occurrence of redundant boxes, the last step performs a **non-maximum suppression** which aims at keeping only the bounding box with the highest confidence score.
 
 **Step 5: Post-Processing of Network Output**
+
 The OpenCV library offers a ready-made function for the suppression of overlapping bounding boxes. This function is called NMSBoxes and it can be used as illustrated by the following short code sample:
 
 ```ruby
