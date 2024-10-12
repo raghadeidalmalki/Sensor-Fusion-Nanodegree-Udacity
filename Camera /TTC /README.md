@@ -21,6 +21,7 @@ Based on the constant-velocity model, the velocity v0 can be computed from two s
 
 Once the relative velocity v0 is determined, the time to collision (TTC) can be calculated by dividing the remaining distance between the two vehicles by v0. With a Lidar sensor capable of precise distance measurements, a TTC estimation system can be developed using a Constant Velocity Model (CVM) along with the equations outlined above. However, it's important to note that a radar sensor would be a more effective solution for TTC calculation, as it can directly measure the relative speed. In contrast, using a Lidar sensor requires computing v0 from two (and potentially noisy) distance measurements.
 
+## Estimating TTC with a LiDar
 To derive a stable TTC measurement from the given point cloud, two main steps have to be performed:
 1.	Remove measurements on the road surface
 2.	Remove measurements with low reflectivity
@@ -85,3 +86,16 @@ After finding the minimum x-coordinates (minXPrev and minXCurr) for the previous
 ```
 TTC = minXCurr * dT / (minXPrev - minXCurr);
 ```
+## Estimating TTC with a Camera
+Computing the time-to-collision (TTC) with a 2D camera is more complex. First, a camera captures only a 2D image of the scene, lacking the ability to perform 3D measurements. Second, we must reliably and accurately identify vehicles to track their motion over time. Monocular cameras cannot measure metric distances; they are passive sensors that depend on ambient light reflecting off objects into the camera lens. As a result, it is not possible to measure the travel time of light as is done with Lidar technology.
+
+Despite the limitations of a monocular camera, we can explore a method to compute time-to-collision (TTC) without directly measuring distances. By considering the constant velocity motion model, we can replace the metric distances d with a more reliable measure: pixel distances on the image plane.
+In the figure below, you can see how the height H of the preceding vehicle is projected onto the image plane through perspective projection. This mapping shows that the same height H corresponds to different heights h0 and h1 on the image plane, depending on the distances d0 and d1 of the vehicle. This highlights the geometric relationship between h, H, d, and the focal length f of the pinhole camera—an aspect we aim to leverage in the following discussion.
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/533d7766-fd7a-461a-bd4c-cec74f174f27">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/0183a9a3-55ac-4500-9a52-fe430a5e6b02">
+
+•	In (1) we use the focal length of the camera and a distance measurement d0 performed at time t0 to project the height H of the vehicle onto the image plane and thus to a height h0 in pixels. The same is done at time t1, leading to a projected height h1.
+•	In (2), we compute the ratio of the relative heights h0 and h1. As both H and f are cancelled out, we can observe a direct relation between relative height h and absolute metric distance d. We can thus express the distance to the vehicle d0 as the product of d1 and the ratio of relative heights on the image plane.
+•	In (3), we substitute d0 in the equation for constant velocity and solve for d1, which is now dependent on the constant relative velocity v0, on the time between measuring d0 and d1 and on the ratio of relative heights on the image plane.
+•	In (4), the TTC is computed as the ratio of remaining distance to impact, which is d1, and the constant velocity v0. As we can easily see, the TTC now only consists of Δt, h0 and h1
