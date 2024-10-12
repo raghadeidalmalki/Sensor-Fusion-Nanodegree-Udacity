@@ -29,3 +29,59 @@ To derive a stable TTC measurement from the given point cloud, two main steps ha
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/72844ec6-470a-4b42-b251-8e0e0fad1de9">
 
+## Computing TTC from Distance Measurements
+In the code examples throughout this course, Lidar points are organized into a data structure called ```LidarPoints```. This structure includes the point coordinates: x (forward), y (left), and z (upward) in metric units, along with the point reflectivity r, which ranges from 0 to 1, indicating the level of reflectivity (with higher values representing greater reflectivity).
+
+```ruby
+struct LidarPoint { // single lidar point in space
+    double x, y, z; // point position in m
+    double r; // point reflectivity in the range 0-1
+};
+```
+To calculate the time-to-collision (TTC), we first need to determine the distance to the closest Lidar point in the vehicle's path. In the figure below, Lidar measurements taken from the tailgate of the preceding vehicle at times t0 (green) and t1 (red) illustrate this. It is evident that the distance to the vehicle has decreased slightly between these two time points.
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/cd33e842-b162-4bed-a4bd-87ca6bbcc77f">
+
+The following code searches for the closest point in the point cloud associated with t0 (lidarPointsPrev) and in the point cloud associated with t1 (lidarPointsCurr). After finding the distance to the closest points respectively, the TTC is computed based on the formula we derived at the beginning of this section.
+
+```ruby
+void computeTTCLidar(std::vector<LidarPoint> &lidarPointsPrev, 
+                     std::vector<LidarPoint> &lidarPointsCurr, double &TTC)
+{
+    // auxiliary variables
+    double dT = 0.1; // time between two measurements in seconds
+
+    // find closest distance to Lidar points 
+    double minXPrev = 1e9, minXCurr = 1e9; //1e9 is 1*10^9
+    for(auto it=lidarPointsPrev.begin(); it!=lidarPointsPrev.end(); ++it) {
+        minXPrev = minXPrev>it->x ? it->x : minXPrev;
+    }
+
+    for(auto it=lidarPointsCurr.begin(); it!=lidarPointsCurr.end(); ++it) {
+        minXCurr = minXCurr>it->x ? it->x : minXCurr;
+    }
+
+    // compute TTC from both measurements
+    TTC = minXCurr * dT / (minXPrev-minXCurr); // minXCurr * dT calculates the distance the object will travel in the next time interval (dT) based on its current velocity (assuming it's moving at a constant rate).
+}
+```
+
+**Loop through lidarPointsPrev:**
+This loop iterates through each LidarPoint in lidarPointsPrev. For each point, it checks if it->x (the x-coordinate of the current point) is smaller than minXPrev. If it is, minXPrev is updated to it->x.
+```
+for(auto it=lidarPointsPrev.begin(); it!=lidarPointsPrev.end(); ++it) {
+    minXPrev = minXPrev > it->x ? it->x : minXPrev;
+}
+```
+**Loop through lidarPointsCurr:**
+This loop iterates through each LidarPoint in lidarPointsCurr and updates minXCurr to be the smallest x-coordinate found among these points.
+```
+for(auto it=lidarPointsCurr.begin(); it!=lidarPointsCurr.end(); ++it) {
+    minXCurr = minXCurr > it->x ? it->x : minXCurr;
+}
+```
+**Compute Time-to-Collision (TTC):**
+After finding the minimum x-coordinates (minXPrev and minXCurr) for the previous and current Lidar points respectively, the TTC is computed using the formula: 
+```
+TTC = minXCurr * dT / (minXPrev - minXCurr);
+```
