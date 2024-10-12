@@ -3,7 +3,7 @@ Object detection methods primarily relied on histograms of oriented gradients (H
 
 Another approach to object detection involves deep learning frameworks like TensorFlow and Caffe. An easier alternative that is user-friendly and delivers immediate results is YOLO (You Only Look Once), a fast detection framework integrated into the OpenCV library. It **utilizes a single neural network that processes the entire image at once**. This network **divides the image into regions** and **predicts bounding boxes along with probabilities for each region**, weighting the bounding boxes by their predicted probabilities. The following figure illustrates this principle:
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/f677919e-680b-4fba-8ff3-ce142f64db02">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/f677919e-680b-4fba-8ff3-ce142f64db02">
 
 Unlike classifier-based systems like HOG/SVM, YOLO analyzes the entire image, allowing its predictions to be influenced by the overall context. It makes predictions in a single pass through the network, in contrast to methods like R-CNN, which require thousands of passes to process a single image. This efficiency contributes to YOLO's impressive speed while still producing results comparable to other advanced techniques, such as the Single Shot MultiBox Detector (SSD).
 
