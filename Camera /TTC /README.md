@@ -133,7 +133,7 @@ Cropping will not be reliable enough, especially when the preceding vehicle is n
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/6df534bc-b06d-45f3-b468-f28e1fe9309a">
 
-### Fusing camera and lidar 
+### Fusing Camera and LiDAR 
 **Solution:** use camera-based object classification to cluster lidar points and compute a TTC estimate from 3D bounding boxes.
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/43ab0b44-136b-484c-940d-d9c8fed1c307">
