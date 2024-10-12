@@ -37,7 +37,8 @@ The idea of the camera course is to build a collision detection system - that's 
 In task 1, our objective was to optimize the image loading procedure. Initially, images were inefficiently stored in a vector using a for-loop, causing the data structure to expand with each new image. This approach becomes problematic when dealing with large sequences of images and Lidar point clouds overnight, as it rapidly consumes memory and slows down the entire program.
 To mitigate these issues, our goal is to limit the number of images held in memory. When a new image arrives, the oldest image is removed from one end of the vector, and the new image is added to the opposite end. This method ensures that memory usage remains manageable and prevents performance degradation, as illustrated in the following diagram.
 
-![image](https://github.com/user-attachments/assets/bc6abae3-76fd-41a9-b223-47e6665ff686)
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/bc6abae3-76fd-41a9-b223-47e6665ff686">
+
 
 ```ruby
 for (size_t imgIndex = 0; imgIndex <= imgEndIndex - imgStartIndex; imgIndex++)
