@@ -25,7 +25,7 @@ To derive a stable TTC measurement from the given point cloud, two main steps ha
 1.	Remove measurements on the road surface
 2.	Remove measurements with low reflectivity
 
-<img width="240" alt="image" src="https://github.com/user-attachments/assets/6362f437-40ea-4f12-8538-e3e70fc69beb">
+<img width="270" alt="image" src="https://github.com/user-attachments/assets/6362f437-40ea-4f12-8538-e3e70fc69beb">
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/72844ec6-470a-4b42-b251-8e0e0fad1de9">
 
