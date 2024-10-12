@@ -121,7 +121,8 @@ In the code examples in this course, matching keypoints between images are packa
 
 **Problem:** we need to isolate keypoints on the preceding vehicle i.e. exclude the road surface and static objects 
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/7f8f74d8-7f73-4e24-af54-5457dbe913e5">
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/7f8f74d8-7f73-4e24-af54-5457dbe913e5">
 
 ### Lidar
 **Main idea:** compute distance to preceding vehicle from 3d point cloud at successive moments in time 
@@ -130,7 +131,7 @@ In the code examples in this course, matching keypoints between images are packa
 
 Cropping will not be reliable enough, especially when the preceding vehicle is not directly in front of the sensor.
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/6df534bc-b06d-45f3-b468-f28e1fe9309a">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/6df534bc-b06d-45f3-b468-f28e1fe9309a">
 
 ### Fusing camera and lidar 
 **Solution:** use camera-based object classification to cluster lidar points and compute a TTC estimate from 3D bounding boxes.
