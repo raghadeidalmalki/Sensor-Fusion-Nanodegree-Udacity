@@ -65,10 +65,15 @@ A long-range radar designed to cover 300m range and detect a target with smaller
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/015ff08a-251b-4802-8c74-94e5273e0d27">
 
 •	**R** - Maximum Range a radar can detect targets.
+
 •	**Ps** - Transmitted Power from Radar (dBm)
+
 •	**G - Gain of the Transmit/Receive Antenna (dBi)
+
 •	**λ** - Wavelength of the signal (m)
+
 •	**σ** - radar cross section (m2)
+
 •	**PE** - Minimum received power radar can detect.
 
 
