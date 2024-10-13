@@ -49,7 +49,6 @@ Returns from Different Target Geometries:
 
 ### RCS Units
 This RCS can also be defined using a logarithmic value (dB), since it increases the return signal strength. The formula for converting from RCS to dB is given by: 
-
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/09f3ca7a-2010-429d-a45f-f49ab78dff98">
 
 The following table shows RCS values for different targets in both m^2 and dB. You can use the formula above to see how the two columns of the table are related. For example, from the table below we can see that for an automobile: 
