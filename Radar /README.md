@@ -45,7 +45,7 @@ Smooth edges or surface would scatter the waves in all directions, hence lower R
 
 Returns from Different Target Geometries:
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/22ef9bf1-7b4f-4ea2-b7c4-ff1df0581f8d">
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/22ef9bf1-7b4f-4ea2-b7c4-ff1df0581f8d">
 
 ### RCS Units
 This RCS can also be defined using a logarithmic value (dB), since it increases the return signal strength. The formula for converting from RCS to dB is given by: 
@@ -53,7 +53,6 @@ This RCS can also be defined using a logarithmic value (dB), since it increases 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/09f3ca7a-2010-429d-a45f-f49ab78dff98">
 
 The following table shows RCS values for different targets in both m^2 and dB. You can use the formula above to see how the two columns of the table are related. For example, from the table below we can see that for an automobile: 
-
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/5d78023f-2503-4ea6-8be5-6ed45e907d8d">
 
 
