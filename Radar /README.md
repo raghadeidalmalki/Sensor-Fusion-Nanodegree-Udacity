@@ -1,7 +1,7 @@
 # Radar 
 Radar works using the transmission and detection of electromagnetic waves as seen in the following image:
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/be1eade4-a183-4a43-847d-6b2383d6795b">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/be1eade4-a183-4a43-847d-6b2383d6795b">
 
 The frequency of electromagnetic energy used for radar is unaffected by darkness and penetrates fog and clouds. This permits radar systems to determine the position of road targets that are invisible to the naked eye because of distance, darkness, or weather. The automotive radar generally operates at W band (76GHz - 81GHz). The signal at this frequency is referred to as millimeterWave since the wavelength is in mm.
 
@@ -56,14 +56,14 @@ The following table shows RCS values for different targets in both m^2 and dB. Y
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/5d78023f-2503-4ea6-8be5-6ed45e907d8d">
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/fdb67f2f-e240-4036-a478-294d85cc0a97">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/fdb67f2f-e240-4036-a478-294d85cc0a97">
 
 ## Range Equation Overview
 Using the Radar Range equation, we can design the radar transmitter, receiver, and antenna to have the desired power, gain and noise performance to meet the range requirements.
 
 A long-range radar designed to cover 300m range and detect a target with smaller cross section would need higher transmit power and more antenna gain as compared to a short range radar designed to cover just 50m for similar target. A target with higher cross section can be detected at a longer range as compared to a target with smaller cross section.
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/015ff08a-251b-4802-8c74-94e5273e0d27">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/015ff08a-251b-4802-8c74-94e5273e0d27">
 
 •	**R** - Maximum Range a radar can detect targets.
 •	**Ps** - Transmitted Power from Radar (dBm)
