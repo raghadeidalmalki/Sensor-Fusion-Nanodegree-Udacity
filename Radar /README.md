@@ -16,7 +16,7 @@ Each chirp is defined by its slope. The slope is given by its chirp frequency ba
 
 ### FMCW Hardware Overview
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/e48000ab-36a5-4f58-8a21-7d459c7f1227">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/e48000ab-36a5-4f58-8a21-7d459c7f1227">
 
 **Frequency Synthesizer:** The frequency synthesizer is the component that generates the frequency to bring the chirp frequency all the way to 77GHz in case of automotive radar.
 
@@ -41,20 +41,21 @@ Smooth edges or surface would scatter the waves in all directions, hence lower R
 
 •	The material used in cars, trucks, bicycles, and even in some cases, the clothing material for pedestrians.
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/0ade1b81-a3ed-4694-a464-dd0a9cf41436">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/0ade1b81-a3ed-4694-a464-dd0a9cf41436">
 
 Returns from Different Target Geometries:
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/22ef9bf1-7b4f-4ea2-b7c4-ff1df0581f8d">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/22ef9bf1-7b4f-4ea2-b7c4-ff1df0581f8d">
 
 ### RCS Units
 This RCS can also be defined using a logarithmic value (dB), since it increases the return signal strength. The formula for converting from RCS to dB is given by: 
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/09f3ca7a-2010-429d-a45f-f49ab78dff98">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/09f3ca7a-2010-429d-a45f-f49ab78dff98">
 
 The following table shows RCS values for different targets in both m^2 and dB. You can use the formula above to see how the two columns of the table are related. For example, from the table below we can see that for an automobile: 
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/5d78023f-2503-4ea6-8be5-6ed45e907d8d">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/5d78023f-2503-4ea6-8be5-6ed45e907d8d">
+
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/fdb67f2f-e240-4036-a478-294d85cc0a97">
 
