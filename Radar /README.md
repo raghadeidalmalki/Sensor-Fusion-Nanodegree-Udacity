@@ -78,7 +78,7 @@ A long-range radar designed to cover 300m range and detect a target with smaller
 
 ## Range Estimation
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/ad3bca63-7f31-4bf5-9ec4-991171e7e533">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/ad3bca63-7f31-4bf5-9ec4-991171e7e533">
 
 Radar determines the range of the target by measuring the trip time of the electromagnetic signal it radiates. It is known that EM wave travels at a known speed (300,000,000 m/s), so to determine the range the radar needs to calculate the trip time, by measuring the shift in the frequency.
 
@@ -92,7 +92,7 @@ As per doppler theory an approaching target will shift an emitted and reflected 
 
 ### FMCW Doppler Measurements
 
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/9f12ab8e-e4bf-4113-be3d-962f856b96b1">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/9f12ab8e-e4bf-4113-be3d-962f856b96b1">
 
 There will be a shift in the received signal frequency due to the doppler effect of the target’s velocity. The doppler shift is directly proportional to the velocity of the target as shown below.
 
@@ -112,15 +112,15 @@ We calculate the doppler frequency by measuring the rate of change of phase. The
 
 If the path between a target and the radar is changed by an amount Δx, the phase of the wave received by radar is shifted by
 
-<img width="100" alt="image" src="https://github.com/user-attachments/assets/06e14cd9-6033-4d1b-8d15-e6ebec4f493b">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/06e14cd9-6033-4d1b-8d15-e6ebec4f493b">
 
 where λ and f are, respectively, the wavelength and frequency of the signal and c is the speed of propagation. The resulting change in observed frequency is
 
-<img width="100" alt="image" src="https://github.com/user-attachments/assets/ec0ea143-b8a8-4682-b380-a59cc2ad2f08">
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/ec0ea143-b8a8-4682-b380-a59cc2ad2f08">
 
 Where Δt is the time taken for the observation of the phase change.
 
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/3b1a480f-c7a9-4d43-ab01-4f02c7f31d2e">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/3b1a480f-c7a9-4d43-ab01-4f02c7f31d2e">
 
 ## Fast Fourier Transform (FFT)
 For a radar to efficiently process these measurements digitally, the signal needs to be converted from analog to digital domain and further from time domain to frequency domain to do the spectral analysis of the signal and determine the shifts in frequency due to range and doppler.
@@ -129,7 +129,7 @@ ADC (Analog Digital Converter) converts the analog signal into digital, then the
 
 As seen in the image below, the Range FFTs are applied on every sample on each chirp. Since each chirp is sampled N times, it will generate a range FFT block of N * (Number of chirps). These FFT blocks are also called FFT bins.
 
-<img width="250" alt="image" src="https://github.com/user-attachments/assets/aae963cf-230a-4142-816b-41af2454f16a">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/aae963cf-230a-4142-816b-41af2454f16a">
 
 ## 2D FFT
 
@@ -137,13 +137,13 @@ Once the range bins are determined by running range FFT across all the chirps, a
 
 The output of the first FFT gives the beat frequency, amplitude, and phase for each target. This phase varies as we move from one chirp to another (one bin to another on each row) due to the target’s small displacements. Once the second FFT is implemented it determines the rate of change of phase, which is nothing but the doppler frequency shift.
 
-<img width="250" alt="image" src="https://github.com/user-attachments/assets/d259e20d-6ca4-433d-8ce8-e944e9851490">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/d259e20d-6ca4-433d-8ce8-e944e9851490">
 
 After 2D FFT each bin in every column of block represents increasing range value and each bin in the row corresponds to a velocity value.
 
 The output of Range Doppler response represents an image with Range on one axis and Doppler on the other. This image is called Range Doppler Map (RDM). These maps are often used as user interface to understand the perception of the targets.
 
-<img width="250" alt="image" src="https://github.com/user-attachments/assets/5a09ed38-1ac7-454f-bce1-cf5564764543">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/5a09ed38-1ac7-454f-bce1-cf5564764543">
 
 Radar not only receives the reflected signals from the objects of interest, but also from the environment and unwanted objects. The backscatter from these unwanted sources is called as clutter.
 
@@ -162,7 +162,7 @@ Another approach to clutter thresholding is to use dynamic thresholding. Dynamic
 ## CFAR
 The false alarm issue can be resolved by implementing the constant false alarm rate. CFAR varies the detection threshold based on the vehicle surroundings. The CFAR technique estimates the level of interference in radar range and doppler cells “Training Cells” on either or both the side of the “Cell Under Test”. The estimate is then used to decide if the target is in the Cell Under Test (CUT).
 
-<img width="250" alt="image" src="https://github.com/user-attachments/assets/7bf7630f-ef73-485e-bde1-02fdbdcd4942">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7bf7630f-ef73-485e-bde1-02fdbdcd4942">
 
 ## Clustering
 The algorithm is based on the Euclidean distance, it groups the detection points based on their proximity measured by the Euclidean distance between those points.
