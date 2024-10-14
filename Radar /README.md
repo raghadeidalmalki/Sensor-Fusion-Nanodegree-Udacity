@@ -82,7 +82,7 @@ A long-range radar designed to cover 300m range and detect a target with smaller
 
 Radar determines the range of the target by measuring the trip time of the electromagnetic signal it radiates. It is known that EM wave travels at a known speed (300,000,000 m/s), so to determine the range the radar needs to calculate the trip time, by measuring the shift in the frequency.
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/ecd671b6-1482-4e2b-83d5-edb7984f0cd1">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/ecd671b6-1482-4e2b-83d5-edb7984f0cd1">
 
 ## Doppler Estimation
 
@@ -92,7 +92,7 @@ As per doppler theory an approaching target will shift an emitted and reflected 
 
 ### FMCW Doppler Measurements
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/9f12ab8e-e4bf-4113-be3d-962f856b96b1">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/9f12ab8e-e4bf-4113-be3d-962f856b96b1">
 
 There will be a shift in the received signal frequency due to the doppler effect of the target’s velocity. The doppler shift is directly proportional to the velocity of the target as shown below.
 
