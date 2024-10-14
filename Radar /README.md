@@ -96,7 +96,7 @@ As per doppler theory an approaching target will shift an emitted and reflected 
 
 There will be a shift in the received signal frequency due to the doppler effect of the target’s velocity. The doppler shift is directly proportional to the velocity of the target as shown below.
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/40cba6a1-8cb0-4fa7-a0e8-af9572e01081">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/40cba6a1-8cb0-4fa7-a0e8-af9572e01081">
 
 •	**fD:** shift in the transmitted frequency due to the doppler
 
@@ -112,11 +112,11 @@ We calculate the doppler frequency by measuring the rate of change of phase. The
 
 If the path between a target and the radar is changed by an amount Δx, the phase of the wave received by radar is shifted by
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/06e14cd9-6033-4d1b-8d15-e6ebec4f493b">
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/06e14cd9-6033-4d1b-8d15-e6ebec4f493b">
 
 where λ and f are, respectively, the wavelength and frequency of the signal and c is the speed of propagation. The resulting change in observed frequency is
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/ec0ea143-b8a8-4682-b380-a59cc2ad2f08">
+<img width="150" alt="image" src="https://github.com/user-attachments/assets/ec0ea143-b8a8-4682-b380-a59cc2ad2f08">
 
 Where Δt is the time taken for the observation of the phase change.
 
