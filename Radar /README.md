@@ -76,6 +76,96 @@ A long-range radar designed to cover 300m range and detect a target with smaller
 
 •	**PE** - Minimum received power radar can detect.
 
+## Range Estimation
 
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/ad3bca63-7f31-4bf5-9ec4-991171e7e533">
 
+Radar determines the range of the target by measuring the trip time of the electromagnetic signal it radiates. It is known that EM wave travels at a known speed (300,000,000 m/s), so to determine the range the radar needs to calculate the trip time, by measuring the shift in the frequency.
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/ecd671b6-1482-4e2b-83d5-edb7984f0cd1">
+
+## Doppler Estimation
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/84e80acc-42a4-4681-ad03-1f53aa1cd624">
+
+As per doppler theory an approaching target will shift an emitted and reflected frequency higher, whereas a receding target will shift both frequencies to be lower than the transmitted frequency.
+
+### FMCW Doppler Measurements
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/9f12ab8e-e4bf-4113-be3d-962f856b96b1">
+
+There will be a shift in the received signal frequency due to the doppler effect of the target’s velocity. The doppler shift is directly proportional to the velocity of the target as shown below.
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/40cba6a1-8cb0-4fa7-a0e8-af9572e01081">
+
+•	**fD:** shift in the transmitted frequency due to the doppler
+
+•	**νr:** relative velocity of the target
+
+•	**λ:** wavelength of the signal
+
+By measuring the shift in the frequency due to doppler, radar can determine the velocity. The receding target will have a negative velocity due to the frequency dropping lower, whereas the approaching target will have positive velocity as the frequency shifts higher.
+
+### Doppler Phase Shift
+
+We calculate the doppler frequency by measuring the rate of change of phase. The phase change occurs due to small displacement of a moving target for every chirp duration. Since each chirp duration is generally in microseconds, it results in small displacement in mm (millimeters). These small displacements for every chirp lead to change in phase. Using this rate of change of phase we can determine the doppler frequency.
+
+If the path between a target and the radar is changed by an amount Δx, the phase of the wave received by radar is shifted by
+
+<img width="100" alt="image" src="https://github.com/user-attachments/assets/06e14cd9-6033-4d1b-8d15-e6ebec4f493b">
+
+where λ and f are, respectively, the wavelength and frequency of the signal and c is the speed of propagation. The resulting change in observed frequency is
+
+<img width="100" alt="image" src="https://github.com/user-attachments/assets/ec0ea143-b8a8-4682-b380-a59cc2ad2f08">
+
+Where Δt is the time taken for the observation of the phase change.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/3b1a480f-c7a9-4d43-ab01-4f02c7f31d2e">
+
+## Fast Fourier Transform (FFT)
+For a radar to efficiently process these measurements digitally, the signal needs to be converted from analog to digital domain and further from time domain to frequency domain to do the spectral analysis of the signal and determine the shifts in frequency due to range and doppler.
+
+ADC (Analog Digital Converter) converts the analog signal into digital, then the Fast Fourier Transform is used to convert the signal from time domain to frequency domain. 
+
+As seen in the image below, the Range FFTs are applied on every sample on each chirp. Since each chirp is sampled N times, it will generate a range FFT block of N * (Number of chirps). These FFT blocks are also called FFT bins.
+
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/aae963cf-230a-4142-816b-41af2454f16a">
+
+## 2D FFT
+
+Once the range bins are determined by running range FFT across all the chirps, a second FFT is implemented along the second dimension to determine the doppler frequency shift. As discussed, the doppler is estimated by processing the rate of change of phase across multiple chirps. Hence, the doppler FFT is implemented after all the chirps in the segment are sent and range FFTs are run on them.
+
+The output of the first FFT gives the beat frequency, amplitude, and phase for each target. This phase varies as we move from one chirp to another (one bin to another on each row) due to the target’s small displacements. Once the second FFT is implemented it determines the rate of change of phase, which is nothing but the doppler frequency shift.
+
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/d259e20d-6ca4-433d-8ce8-e944e9851490">
+
+After 2D FFT each bin in every column of block represents increasing range value and each bin in the row corresponds to a velocity value.
+
+The output of Range Doppler response represents an image with Range on one axis and Doppler on the other. This image is called Range Doppler Map (RDM). These maps are often used as user interface to understand the perception of the targets.
+
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/5a09ed38-1ac7-454f-bce1-cf5564764543">
+
+Radar not only receives the reflected signals from the objects of interest, but also from the environment and unwanted objects. The backscatter from these unwanted sources is called as clutter.
+
+One technique to remove clutter is to remove the signals having 0 doppler velocity. Since, the clutter in the driving scenario are often created by the stationary targets, the 0 doppler filtering can help get rid of them.
+The downside of 0 doppler filtering is that the radar would not be able to detect the stationary targets in its path. This would lead to detection failures.
+
+**fixed clutter thresholding:**
+
+Another technique is to use fixed clutter thresholding. With fixed thresholding, signal below the threshold value is rejected. With this method, if the detection threshold is set too high, there will be very few false alarms, but it will also mask the valid targets. If the threshold is set too low, then it would lead to too many false alarms. In other words, the false alarm rate would be too high.
+
+The false alarm rate is the rate of erroneous radar detections by noise or other interfering signals. It is a measure of the presence of detected radar targets when there is no valid target present.
+
+**Dynamic Thresholding:**
+Another approach to clutter thresholding is to use dynamic thresholding. Dynamic thresholding involves varying the threshold level to reduce the false alarm rate.
+
+## CFAR
+The false alarm issue can be resolved by implementing the constant false alarm rate. CFAR varies the detection threshold based on the vehicle surroundings. The CFAR technique estimates the level of interference in radar range and doppler cells “Training Cells” on either or both the side of the “Cell Under Test”. The estimate is then used to decide if the target is in the Cell Under Test (CUT).
+
+<img width="250" alt="image" src="https://github.com/user-attachments/assets/7bf7630f-ef73-485e-bde1-02fdbdcd4942">
+
+## Clustering
+The algorithm is based on the Euclidean distance, it groups the detection points based on their proximity measured by the Euclidean distance between those points.
+
+All the detection points that are within the size of the target are considered as one cluster, merged into a centroid position. Each cluster is now assigned a new range and velocity, which is the mean of measured range and velocity of all the detection points that form the cluster. This allows valid tracking for each target.
 
