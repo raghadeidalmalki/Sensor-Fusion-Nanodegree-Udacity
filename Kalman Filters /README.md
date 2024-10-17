@@ -21,4 +21,4 @@ The range rate, ρ(t)˙, is defined as time rate of change of the range, ρ, and
 For simplicity we just use the following notation:
 
 
-ρ˙= $`\PxVx+PyVy/sqrt{Px^2+Py^2}`$
+ρ˙= Px Vx+Py Vy/$`\sqrt{Px^2+Py^2}`$
