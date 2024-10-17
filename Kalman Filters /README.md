@@ -1,7 +1,7 @@
 
 
 Deriving the Radar Measurement Function
-The measurement function is composed of three components that show how the predicted state, x′=$`\(px′,py′,vx′,vy′)^T`$, is mapped into the measurement space, z=$`(ρ,φ,ρ˙)^T`$:
+The measurement function is composed of three components that show how the predicted state, x′=$`(px′,py′,vx′,vy′)^T`$, is mapped into the measurement space, z=$`(ρ,φ,ρ˙)^T`$:
 The range, ρ, is the distance to the pedestrian which can be defined as:
 
 ρ = $`\sqrt{px^2+py^2}`$
