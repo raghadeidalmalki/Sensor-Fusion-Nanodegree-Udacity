@@ -13,7 +13,7 @@ The range, ρ, is the distance to the pedestrian which can be defined as:
 There are two ways to do the range rate ρ(t)˙ derivation:
 Generally we can explicitly describe the range, ρ, as a function of time:
 
-$`\ρ(t)=sqrt{px(t)^2+py(t)^2}`$
+ρ(t)= $`\sqrt{px(t)^2+py(t)^2}`$
 
 The range rate, ρ(t)˙, is defined as time rate of change of the range, ρ, and it can be described as the time derivative of ρ:
  
