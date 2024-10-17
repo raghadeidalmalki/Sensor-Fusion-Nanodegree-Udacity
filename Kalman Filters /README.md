@@ -16,7 +16,9 @@ Generally we can explicitly describe the range, ρ, as a function of time:
 ρ(t)= $`\sqrt{px(t)^2+py(t)^2}`$
 
 The range rate, ρ(t)˙, is defined as time rate of change of the range, ρ, and it can be described as the time derivative of ρ:
- 
+
+ ![image](https://github.com/user-attachments/assets/3598b239-87a5-4d8b-93f6-bd07e94e07e3)
+
 
 For simplicity we just use the following notation:
 
