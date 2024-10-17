@@ -8,7 +8,7 @@ The range, ρ, is the distance to the pedestrian which can be defined as:
 
 φ is the angle between ρ and the xx direction and can be defined as:
 
-$`\φ=arctan(py/px)`$
+φ=$`\arctan(py/px)`$
 
 There are two ways to do the range rate ρ(t)˙ derivation:
 Generally we can explicitly describe the range, ρ, as a function of time:
