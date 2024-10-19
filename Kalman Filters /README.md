@@ -1,3 +1,29 @@
+# Kaman Filter, Extended Kalman Filter (EKF) and Unscented Kalman Filter 	
+## Kalman filters
+Kalman filters provide estimations over a continuous state, which allows us to estimate future locations and velocities based on positional data.
+In Kalman filters, the probability distribution is given by a **Gaussian**. A Gaussian is a unimodal continuous function over a space of inputs - locations, in this case. Like all probability distributions, the area underneath a Gaussian equals one. 
+
+![image](https://github.com/user-attachments/assets/690be038-c800-4a29-ab08-d06ca24566ac)
+
+A Gaussian is characterized by two parameters: 
+-	Mean, μ (mu)
+
+-	 Variance, $`σ^2`$.
+
+Our task is to maintain a μ and $`σ^2`$ that parameterize the Gaussian that serves as our best estimate of the location of the object that we are trying to localize.
+
+The expression inside the exponential shows that we are taking the squared difference of our query point, x, and our mean, μ, and dividing this squared difference by the variance, $`σ^2`$  ; the difference between x and μ is normalized by $`σ^2`$ . If x=μ, the numerator in this expression becomes zero, so we have exp(0) = 1. Indicating that the probability should be maximal when x equals the mean of the distribution.
+
+Larger values of $`σ^2`$ indicate large differences between x and μ less than smaller values, in other words, high uncertainty. As a result, Gaussians with large variances produce larger values of f(x) when x is far from the mean than do Gaussians with smaller variances.
+
+
+
+
+
+
+
+
+----------------
 
 
 Deriving the Radar Measurement Function
