@@ -3,7 +3,7 @@
 Kalman filters provide estimations over a continuous state, which allows us to estimate future locations and velocities based on positional data.
 In Kalman filters, the probability distribution is given by a **Gaussian**. A Gaussian is a unimodal continuous function over a space of inputs - locations, in this case. Like all probability distributions, the area underneath a Gaussian equals one. 
 
-![image](https://github.com/user-attachments/assets/690be038-c800-4a29-ab08-d06ca24566ac)
+<img width="100" alt="image" src="https://github.com/user-attachments/assets/690be038-c800-4a29-ab08-d06ca24566ac">
 
 A Gaussian is characterized by two parameters: 
 -	Mean, μ (mu)
@@ -169,7 +169,7 @@ The main differences are:
 
 •	To calculate `x′`, the prediction update function, `f`, is used instead of the `F` matrix. The predicted measurement vector x′ is a vector containing values in the form `[Px,Py,Vx,Vy]`. The radar sensor will output values in polar coordinates:
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/be17bae6-b757-4cc6-9d88-df94baf63ecb">
+<img width="100" alt="image" src="https://github.com/user-attachments/assets/be17bae6-b757-4cc6-9d88-df94baf63ecb">
 
 
 •	To calculate `y`, the `h` function is used instead of the `H` matrix. We use the equations that map the predicted location `x′` from Cartesian coordinates to polar coordinates:
