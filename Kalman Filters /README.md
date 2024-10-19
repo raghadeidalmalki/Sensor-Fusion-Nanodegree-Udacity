@@ -115,7 +115,7 @@ This non-linear function specifies how the predictive position and speed can be 
 
 **Deriving the Radar Measurement Function:**
 
-The measurement function is composed of three components that show how the predicted state, x′=$`(px′,py′,vx′,vy′)^T`$, is mapped into the measurement space, z=$`(ρ,φ,ρ˙)^T`$:
+The measurement function is composed of three components that show how the predicted state, `x′=$`(px′,py′,vx′,vy′)^T`$`, is mapped into the measurement space, `z=$`(ρ,φ,ρ˙)^T`$`:
 The range, ρ, is the distance to the pedestrian which can be defined as:
 
 ρ = $`\sqrt{px^2+py^2}`$
@@ -131,8 +131,7 @@ Generally we can explicitly describe the range, ρ, as a function of time:
 
 The range rate, ρ(t)˙, is defined as time rate of change of the range, ρ, and it can be described as the time derivative of ρ:
 
- ![image](https://github.com/user-attachments/assets/3598b239-87a5-4d8b-93f6-bd07e94e07e3)
-
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/3598b239-87a5-4d8b-93f6-bd07e94e07e3">
 
 For simplicity we just use the following notation:
 
@@ -141,11 +140,11 @@ For simplicity we just use the following notation:
 
 The range rate, ρ˙, can be seen as a scalar projection of the velocity vector, **v**, onto **ρ**. Both ** ρ** and **v** are 2D vectors defined as:
 
-![image](https://github.com/user-attachments/assets/ca804d18-32f4-4a49-9a1f-40473b9e2aba)
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/ca804d18-32f4-4a49-9a1f-40473b9e2aba">
 
 The scalar projection of the velocity vector **v** onto **ρ** is defined as:
 
-![image](https://github.com/user-attachments/assets/154944de-4ca3-4055-a452-1545f31c5835)
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/154944de-4ca3-4055-a452-1545f31c5835">
 
 where ∣**ρ**∣ is the length of **ρ**. In our case it is actually the range, so ρ=∣**ρ**|.
 
