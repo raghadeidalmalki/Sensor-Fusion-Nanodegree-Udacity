@@ -3,7 +3,7 @@
 Kalman filters provide estimations over a continuous state, which allows us to estimate future locations and velocities based on positional data.
 In Kalman filters, the probability distribution is given by a **Gaussian**. A Gaussian is a unimodal continuous function over a space of inputs - locations, in this case. Like all probability distributions, the area underneath a Gaussian equals one. 
 
-<img width="100" alt="image" src="https://github.com/user-attachments/assets/690be038-c800-4a29-ab08-d06ca24566ac">
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/690be038-c800-4a29-ab08-d06ca24566ac">
 
 A Gaussian is characterized by two parameters: 
 -	Mean, μ (mu)
