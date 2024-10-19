@@ -84,16 +84,16 @@ The measurement update step depends on the sensor type; if the current measureme
 ### Radar and LiDAR Measurements
 The state transition function is the same for both radar and lidar: 
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/3c382a9e-ce9d-44b6-b78b-cf79187663c8">
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/3c382a9e-ce9d-44b6-b78b-cf79187663c8">
 
 
 However, radar sees the world differently, radar can directly measure the following 
 
-![image](https://github.com/user-attachments/assets/f1922400-d501-4fed-b5e1-a32cc6eb2597)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/f1922400-d501-4fed-b5e1-a32cc6eb2597">
 
 Therefor,
 
-![image](https://github.com/user-attachments/assets/abd0b979-2514-42e9-857e-56df83ed5eb8)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/abd0b979-2514-42e9-857e-56df83ed5eb8">
 
 **Definition of Radar Variables:**
 
