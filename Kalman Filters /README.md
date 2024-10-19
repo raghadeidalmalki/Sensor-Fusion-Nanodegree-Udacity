@@ -1,4 +1,4 @@
-# Kaman Filter, Extended Kalman Filter (EKF), Unscented Kalman Filter and LiDAR and Radar fusion with Kalman filters
+# LiDAR and Radar fusion with Kalman Filters, Extended Kalman Filter (EKF) and Unscented Kalman Filter 
 ## Kalman filters
 Kalman filters provide estimations over a continuous state, which allows us to estimate future locations and velocities based on positional data.
 In Kalman filters, the probability distribution is given by a **Gaussian**. A Gaussian is a unimodal continuous function over a space of inputs - locations, in this case. Like all probability distributions, the area underneath a Gaussian equals one. 
