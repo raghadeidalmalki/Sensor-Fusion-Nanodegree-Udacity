@@ -17,11 +17,11 @@ The expression inside the exponential shows that we are taking the squared diffe
 Larger values of $`σ^2`$ indicate large differences between x and μ less than smaller values, in other words, high uncertainty. As a result, Gaussians with large variances produce larger values of f(x) when x is far from the mean than do Gaussians with smaller variances.
 
 Kalmen filters iterate on two main cycles:
--	The first cycle is the **Measurement Update**:
+-	The **Measurement Update**:
 
 Uses Bayes' rule, which produces a new posterior distribution by taking the product of the prior distribution and the information we gain from our measurement.
 
--	The second cycle is the **Motion Update**:
+-	The **Motion Update**:
 
 AKA the **prediction** - uses the theory of total probability, which produces a new posterior by adding the motion to the prior.
 
@@ -105,9 +105,9 @@ Therefor,
 
 The measurement function h of x’, that maps the predicted state x’ into the measurement space: 
 
-![image](https://github.com/user-attachments/assets/bc96ee50-1cac-41cc-8f8f-c6298b9c0016)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/bc96ee50-1cac-41cc-8f8f-c6298b9c0016">
 
-![image](https://github.com/user-attachments/assets/0e932834-b3d0-400f-9ec5-8377f994b9e6)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/0e932834-b3d0-400f-9ec5-8377f994b9e6">
 
 
 This non-linear function specifies how the predictive position and speed can be related to the object range, bearing, and range rate.
