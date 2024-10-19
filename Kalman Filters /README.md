@@ -46,7 +46,8 @@ Other equations for the update and prediction steps can be found [here](https://
 
 The EKF is extended in a sense that it will be capable of handling more complex motion models and measurement models 
 
-![image](https://github.com/user-attachments/assets/b87763b0-6ff6-43d6-8b1d-dff8235475ae)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b87763b0-6ff6-43d6-8b1d-dff8235475ae">
+
 
 The Kalman Filter algorithm will go through the following steps:
 
@@ -174,4 +175,4 @@ The main differences are:
 
 •	To calculate `y`, the `h` function is used instead of the `H` matrix. We use the equations that map the predicted location `x′` from Cartesian coordinates to polar coordinates:
 
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/adca5378-f499-4f8c-a81b-1c6fd06cf781">
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/adca5378-f499-4f8c-a81b-1c6fd06cf781">
