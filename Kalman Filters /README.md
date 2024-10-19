@@ -30,7 +30,7 @@ When we design a Kalman filter we need 2 things:
 1. State Transition Function: models how the state has changed from time K minus one to time K.
 2. Measurement Function: models how the measurement is calculated and how it's related to the predicted state x.
 
-other equations for the update and prediction steps can be found here 
+Other equations for the update and prediction steps can be found [here](https://github.com/raghadeidalmalki/Sensor-Fusion-Nanodegree-Udacity/blob/main/Kalman%20Filters%20/Kalman%20Filter%20Equations/sensor-fusion-ekf-reference.pdf)
 
 
 
