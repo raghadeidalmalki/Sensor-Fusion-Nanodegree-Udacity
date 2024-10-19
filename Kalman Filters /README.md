@@ -66,7 +66,8 @@ The measurement update step depends on the sensor type; if the current measureme
 •	Then the car will receive another sensor measurement after a time period Δt. The algorithm then does another **predict** and **update** step.
 
 
-![image](https://github.com/user-attachments/assets/9675ad47-1a74-4179-abc1-a77139a4fd9d)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/9675ad47-1a74-4179-abc1-a77139a4fd9d">
+
 
 **Definition of Variables:** 
 
@@ -83,7 +84,8 @@ The measurement update step depends on the sensor type; if the current measureme
 ### Radar and LiDAR Measurements
 The state transition function is the same for both radar and lidar: 
 
-![image](https://github.com/user-attachments/assets/3c382a9e-ce9d-44b6-b78b-cf79187663c8)
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/3c382a9e-ce9d-44b6-b78b-cf79187663c8">
+
 
 However, radar sees the world differently, radar can directly measure the following 
 
