@@ -30,7 +30,7 @@ When we design a Kalman filter we need 2 things:
 1. State Transition Function `x′=Fx+Bu+ν` : models how the state has changed from time K minus one to time K. We will cross out `Bu`  leaving `x′=Fx+ν`
 2. Measurement Function `Z = Hx' + w`: models how the measurement is calculated and how it's related to the predicted state x.
 
-***`v (nu)` noise and `omega` noise represent the Stochastic part or in other words, are random noises that affect the prediction and measurement of the steps.***
+`v (nu)` noise and `omega` noise represent the Stochastic part or in other words, are random noises that affect the prediction and measurement of the steps.
 
 `B` is a matrix called the **control input matrix** and `u` is the **control vector**.
 
@@ -40,7 +40,7 @@ For this lesson, we will assume that there is no way to measure or know the exac
 
 
 
-Other equations for the update and prediction steps can be found [here](https://github.com/raghadeidalmalki/Sensor-Fusion-Nanodegree-Udacity/blob/main/Kalman%20Filters%20/Kalman%20Filter%20Equations/sensor-fusion-ekf-reference.pdf)
+***Other equations for the update and prediction steps can be found [here](https://github.com/raghadeidalmalki/Sensor-Fusion-Nanodegree-Udacity/blob/main/Kalman%20Filters%20/Kalman%20Filter%20Equations/sensor-fusion-ekf-reference.pdf)***
 
 ## LiDAR and Radar fusion with Extended Kalman Filter (EKF)
 
