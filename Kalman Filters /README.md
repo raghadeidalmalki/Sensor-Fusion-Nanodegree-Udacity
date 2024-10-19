@@ -175,6 +175,7 @@ The main differences are:
 
 
 •	To calculate `y`, the `h` function is used instead of the `H` matrix. We use the equations that map the predicted location `x′` from Cartesian coordinates to polar coordinates:
+
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/7b6816b0-c3aa-4b15-b598-973a5e2dd447">
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/adca5378-f499-4f8c-a81b-1c6fd06cf781">
