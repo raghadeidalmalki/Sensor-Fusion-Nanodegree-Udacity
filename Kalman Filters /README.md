@@ -1,4 +1,4 @@
-# Kaman Filter, Extended Kalman Filter (EKF) and Unscented Kalman Filter 	
+# Kaman Filter, Extended Kalman Filter (EKF), Unscented Kalman Filter and LiDAR and Radar fusion with Kalman filters
 ## Kalman filters
 Kalman filters provide estimations over a continuous state, which allows us to estimate future locations and velocities based on positional data.
 In Kalman filters, the probability distribution is given by a **Gaussian**. A Gaussian is a unimodal continuous function over a space of inputs - locations, in this case. Like all probability distributions, the area underneath a Gaussian equals one. 
@@ -16,6 +16,19 @@ The expression inside the exponential shows that we are taking the squared diffe
 
 Larger values of $`σ^2`$ indicate large differences between x and μ less than smaller values, in other words, high uncertainty. As a result, Gaussians with large variances produce larger values of f(x) when x is far from the mean than do Gaussians with smaller variances.
 
+Kalmen filters iterate on two main cycles:
+-	The first cycle is the **Measurement Update**:
+
+Uses Bayes' rule, which produces a new posterior distribution by taking the product of the prior distribution and the information we gain from our measurement.
+
+-	The second cycle is the **Motion Update**:
+
+AKA the **prediction** - uses the theory of total probability, which produces a new posterior by adding the motion to the prior.
+
+### Designing Kalman filter
+When we design a Kalman filter we need 2 things:
+1. State Transition Function: models how the state has changed from time K minus one to time K.
+2. Measurement Function: models how the measurement is calculated and how it's related to the predicted state x.
 
 
 
