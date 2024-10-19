@@ -27,10 +27,18 @@ AKA the **prediction** - uses the theory of total probability, which produces a 
 
 ### Designing Kalman filter
 When we design a Kalman filter we need 2 things:
-1. State Transition Function `x′=Fx+Bu+ν` : models how the state has changed from time K minus one to time K. 
+1. State Transition Function `x′=Fx+Bu+ν` : models how the state has changed from time K minus one to time K. We will cross out `Bu`  leaving `x′=Fx+ν`
 2. Measurement Function `Z = Hx' + w`: models how the measurement is calculated and how it's related to the predicted state x.
 
 ***`v (nu)` noise and `omega` noise represent the Stochastic part or in other words, are random noises that affect the prediction and measurement of the steps.***
+
+`B` is a matrix called the **control input matrix** and `u` is the **control vector**.
+
+As an example, let's say we were tracking a car and we knew for certain how much the car's motor was going to accelerate or decelerate over time; in other words, we had an equation to model the exact amount of acceleration at any given moment. Bu would represent the updated position of the car due to the internal force of the motor. We would use ν to represent any random noise that we could not precisely predict like if the car slipped on the road, or a strong wind moved the car.
+
+For this lesson, we will assume that there is no way to measure or know the exact acceleration of a tracked object. For example, if we were in an autonomous vehicle tracking a bicycle, pedestrian or another car, we would not be able to model the internal forces of the other object; hence, we do not know for certain what the other object's acceleration is. Instead, we will set `Bu=0` and represent acceleration as a random noise with mean `ν`.
+
+
 
 Other equations for the update and prediction steps can be found [here](https://github.com/raghadeidalmalki/Sensor-Fusion-Nanodegree-Udacity/blob/main/Kalman%20Filters%20/Kalman%20Filter%20Equations/sensor-fusion-ekf-reference.pdf)
 
@@ -71,12 +79,39 @@ The measurement update step depends on the sensor type; if the current measureme
 
 •	`xk+1` means that you have now predicted where the object will be at time `k+1` and then used the sensor measurement to update the object's position and velocity.
 
+### Radar and LiDAR Measurements
+The state transition function is the same for both radar and lidar: 
+
+![image](https://github.com/user-attachments/assets/3c382a9e-ce9d-44b6-b78b-cf79187663c8)
+
+However, radar sees the world differently, radar can directly measure the following 
+
+![image](https://github.com/user-attachments/assets/f1922400-d501-4fed-b5e1-a32cc6eb2597)
+
+Therefor,
+
+![image](https://github.com/user-attachments/assets/abd0b979-2514-42e9-857e-56df83ed5eb8)
+
+**Definition of Radar Variables:**
+
+•	The range, `(ρ)`, is the distance to the pedestrian. The range is basically the magnitude of the position vector `ρ` which can be defined as `ρ=sqrt(px^2+py^2)`.
+
+•	`φ=atan(py/px)`. Note that `φ` is referenced counter-clockwise from the x-axis.
+
+•	The range rate, `ρ˙`, is the projection of the velocity, v, onto the line, L.
+
+The measurement function h of x’, that maps the predicted state x’ into the measurement space: 
+
+![image](https://github.com/user-attachments/assets/bc96ee50-1cac-41cc-8f8f-c6298b9c0016)
+
+![image](https://github.com/user-attachments/assets/0e932834-b3d0-400f-9ec5-8377f994b9e6)
 
 
-----------------
+This non-linear function specifies how the predictive position and speed can be related to the object range, bearing, and range rate.
 
 
-Deriving the Radar Measurement Function
+**Deriving the Radar Measurement Function:**
+
 The measurement function is composed of three components that show how the predicted state, x′=$`(px′,py′,vx′,vy′)^T`$, is mapped into the measurement space, z=$`(ρ,φ,ρ˙)^T`$:
 The range, ρ, is the distance to the pedestrian which can be defined as:
 
@@ -100,3 +135,30 @@ For simplicity we just use the following notation:
 
 
 ρ˙= (Px Vx+Py Vy)/$`\sqrt{Px^2+Py^2}`$
+
+The range rate, ρ˙, can be seen as a scalar projection of the velocity vector, **v**, onto **ρ**. Both ** ρ** and **v** are 2D vectors defined as:
+
+![image](https://github.com/user-attachments/assets/ca804d18-32f4-4a49-9a1f-40473b9e2aba)
+
+The scalar projection of the velocity vector **v** onto **ρ** is defined as:
+
+![image](https://github.com/user-attachments/assets/154944de-4ca3-4055-a452-1545f31c5835)
+
+where ∣**ρ**∣ is the length of **ρ**. In our case it is actually the range, so ρ=∣**ρ**|.
+
+### Multivariate Taylor Series
+
+
+As shown above the h function is composed of three equations that show how the predicted state, ′=$`(px′,py′,vx′,vy′)^T`$, is mapped into the measurement space, z=$`(ρ,φ,ρ˙)^T`$:
+
+These are multi-dimensional equations, so we will need to use a multi-dimensional Taylor series expansion to make a linear approximation of the h function. Here is a general formula for the multi-dimensional Taylor series expansion:
+
+![image](https://github.com/user-attachments/assets/8599d6a1-5d95-49ca-9448-a55d4128350a)
+
+where Df(a) is called the Jacobian matrix and $`D^2`$f(a) is called the [Hessian matrix](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/quadratic-approximations/a/the-hessian). They represent first order and second order derivatives of multi-dimensional equations. A full Taylor series expansion would include higher order terms as well for the third order derivatives, fourth order derivatives, and so on.
+
+To derive a linear approximation for the h function, we will only keep the expansion up to the Jacobian matrix Df(a). We will ignore the Hessian matrix $`D^2`$f(a) and other higher order terms. Assuming (x−a)(x−a) is small, $`(x−a)^2`$ or the multi-dimensional equivalent $`(x−a)^T`$(x−a) will be even smaller; the extended Kalman filter we'll be using assumes that higher order terms beyond the Jacobian are negligible.
+
+
+
+
