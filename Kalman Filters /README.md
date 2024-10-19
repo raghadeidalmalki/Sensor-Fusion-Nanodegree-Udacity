@@ -159,6 +159,18 @@ where Df(a) is called the Jacobian matrix and $`D^2`$f(a) is called the [Hessian
 
 To derive a linear approximation for the h function, we will only keep the expansion up to the Jacobian matrix Df(a). We will ignore the Hessian matrix $`D^2`$f(a) and other higher order terms. Assuming (x−a)(x−a) is small, $`(x−a)^2`$ or the multi-dimensional equivalent $`(x−a)^T`$(x−a) will be even smaller; the extended Kalman filter we'll be using assumes that higher order terms beyond the Jacobian are negligible.
 
+### EKF Equations and Kalman filters Equations 
+
+The main differences are:
+
+•	The `F` matrix will be replaced by `Fj` when calculating `P′`.
+
+•	The `H` matrix in the Kalman filter will be replaced by the Jacobian matrix `Hj` when calculating `S`, `K`, and `P`.
+
+•	To calculate `x′`, the prediction update function, `f`, is used instead of the `F` matrix. The predicted measurement vector x′ is a vector containing values in the form `[Px,Py,Vx,Vy]`. The radar sensor will output values in polar coordinates:
+![image](https://github.com/user-attachments/assets/be17bae6-b757-4cc6-9d88-df94baf63ecb)
 
 
+•	To calculate `y`, the `h` function is used instead of the `H` matrix. We use the equations that map the predicted location `x′` from Cartesian coordinates to polar coordinates:
 
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/adca5378-f499-4f8c-a81b-1c6fd06cf781">
