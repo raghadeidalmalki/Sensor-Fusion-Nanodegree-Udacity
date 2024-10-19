@@ -168,9 +168,10 @@ The main differences are:
 •	The `H` matrix in the Kalman filter will be replaced by the Jacobian matrix `Hj` when calculating `S`, `K`, and `P`.
 
 •	To calculate `x′`, the prediction update function, `f`, is used instead of the `F` matrix. The predicted measurement vector x′ is a vector containing values in the form `[Px,Py,Vx,Vy]`. The radar sensor will output values in polar coordinates:
-![image](https://github.com/user-attachments/assets/be17bae6-b757-4cc6-9d88-df94baf63ecb)
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/be17bae6-b757-4cc6-9d88-df94baf63ecb">
 
 
 •	To calculate `y`, the `h` function is used instead of the `H` matrix. We use the equations that map the predicted location `x′` from Cartesian coordinates to polar coordinates:
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/adca5378-f499-4f8c-a81b-1c6fd06cf781">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/adca5378-f499-4f8c-a81b-1c6fd06cf781">
