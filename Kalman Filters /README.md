@@ -179,3 +179,19 @@ The main differences are:
 •	To calculate `y`, the `h` function is used instead of the `H` matrix. We use the equations that map the predicted location `x′` from Cartesian coordinates to polar coordinates:
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/7b6816b0-c3aa-4b15-b598-973a5e2dd447">
+
+## Unscented Kalman Filter (UKF)
+
+The UKF is an alternative technique to deal with nonlinear process models and nonlinear measurement models. Instead of linearizing a nonlinear function, the UKF uses so-called **sigma points** to approximate the probability distribution. 
+
+
+**This has two advantages:**
+
+-	In many cases the sigma points approximate the nonlinear transition better than a linearization does. 
+
+-	We do not need to calculate the Jacobian matrix.
+
+
+***We will work with the Constant Turn Rate and Velocity Magnitude Model (CTRV)***
+
+
