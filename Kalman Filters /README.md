@@ -195,7 +195,7 @@ So, the State Vector is given by:  <img width="100" alt="image" src="https://git
 <img width="580" alt="image" src="https://github.com/user-attachments/assets/f7ec9d57-0549-4b01-9249-b995f285a90c">
 
 
-**The UKF prediction stage:**
+### **The UKF prediction stage:**
 
 1. **Simga Points Generation:** generate simga points from the last updated state and covariance matrix.
 
@@ -203,3 +203,14 @@ So, the State Vector is given by:  <img width="100" alt="image" src="https://git
 
 3. **Mean and Covariance Calculations:** Calculate the predicted mean and covariance matrix from the predicted or measurement sigma points.
 
+
+### **The UKF Measurement Stage**
+
+1. **Generate Measurement Simga Points and Calculate Its Mean and Covariance:**
+Like what we do in Prediction Stage, measurement model is also non-linear that we need to put several sigma points into measurement function. But here we could have two shortcut.
+
+- First, we could directly put the predicted sigma points generated from Prediction Step into the measurement model.
+
+- Second, we don’t have to augment the predicted sigma points with measurement noise vector, because it has no non-linear effect in our measurement model.
+
+2. **Update the State and Covariance Matrix with Radar Data**
