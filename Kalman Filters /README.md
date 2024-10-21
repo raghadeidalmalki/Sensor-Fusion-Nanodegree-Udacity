@@ -182,14 +182,7 @@ The main differences are:
 
 ## Unscented Kalman Filter (UKF)
 
-The UKF is an alternative technique to deal with nonlinear process models and nonlinear measurement models. Instead of linearizing a nonlinear function, the UKF uses so-called **sigma points** to approximate the probability distribution. 
-
-
-**This has two advantages:**
-
--	In many cases the sigma points approximate the nonlinear transition better than a linearization does. 
-
--	We do not need to calculate the Jacobian matrix.
+What makes UKF and EKF different is the method they use to tackle non-linear motion model and measurement model. Instead of linearizing a nonlinear function using the Jacobian matrix, the UKF takes representative points from the whole distribution, called sigma points, from a Gaussian distribution and puts them into the non-linear function known as the unscented transformation. This process produces the corresponding sigma points in the predicted or measurement state space. We can then calculate the mean vector and covariance matrix from these corresponding sigma points to obtain the Gaussian distribution of the predicted or measurement state space.
 
 
 ***We will work with the Constant Turn Rate and Velocity Magnitude Model (CTRV)***: Which is a process model that considers the possibility of driving in a straight line or making a turn.
@@ -199,3 +192,6 @@ The UKF is an alternative technique to deal with nonlinear process models and no
 So, the State Vector is given by: 
 
 <img width="100" alt="image" src="https://github.com/user-attachments/assets/99e56a89-baa4-4fec-b320-1ffa363b0737">
+
+<img width="580" alt="image" src="https://github.com/user-attachments/assets/f7ec9d57-0549-4b01-9249-b995f285a90c">
+
