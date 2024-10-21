@@ -192,6 +192,10 @@ The UKF is an alternative technique to deal with nonlinear process models and no
 -	We do not need to calculate the Jacobian matrix.
 
 
-***We will work with the Constant Turn Rate and Velocity Magnitude Model (CTRV)***
+***We will work with the Constant Turn Rate and Velocity Magnitude Model (CTRV)***: Which is a process model that considers the possibility of driving in a straight line or making a turn.
 
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/ac05b939-23f8-4987-a21f-5dfdece5df80">
 
+So, the State Vector is given by: 
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/99e56a89-baa4-4fec-b320-1ffa363b0737">
