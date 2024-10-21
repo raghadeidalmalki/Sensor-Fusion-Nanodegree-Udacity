@@ -198,4 +198,4 @@ The UKF is an alternative technique to deal with nonlinear process models and no
 
 So, the State Vector is given by: 
 
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/99e56a89-baa4-4fec-b320-1ffa363b0737">
+<img width="100" alt="image" src="https://github.com/user-attachments/assets/99e56a89-baa4-4fec-b320-1ffa363b0737">
