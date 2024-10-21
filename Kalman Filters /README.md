@@ -193,5 +193,14 @@ So, the State Vector is given by:
 
 <img width="100" alt="image" src="https://github.com/user-attachments/assets/99e56a89-baa4-4fec-b320-1ffa363b0737">
 
+**The UKF prediction stage:**
+
+1. Generate simga points from the last updated state and covariance matrix.
+
+2. Insert them into the process function or measurement function to do unscented transformation.
+
+3. Calculate the predicted mean and covariance matrix from the predicted or measurement sigma points.
+
+
 <img width="580" alt="image" src="https://github.com/user-attachments/assets/f7ec9d57-0549-4b01-9249-b995f285a90c">
 
