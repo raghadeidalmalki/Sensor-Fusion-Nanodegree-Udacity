@@ -189,10 +189,8 @@ What makes UKF and EKF different is the method they use to tackle non-linear mot
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/ac05b939-23f8-4987-a21f-5dfdece5df80">
 
-So, the State Vector is given by: 
+So, the State Vector is given by:  <img width="100" alt="image" src="https://github.com/user-attachments/assets/99e56a89-baa4-4fec-b320-1ffa363b0737">
 
-<img width="100" alt="image" src="https://github.com/user-attachments/assets/99e56a89-baa4-4fec-b320-1ffa363b0737">
-------------------------------------------
 
 <img width="580" alt="image" src="https://github.com/user-attachments/assets/f7ec9d57-0549-4b01-9249-b995f285a90c">
 
