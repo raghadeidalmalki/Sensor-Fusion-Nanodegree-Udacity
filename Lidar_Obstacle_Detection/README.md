@@ -4,6 +4,3 @@ Lidar works by emitting brief laser pulses that travel to an object and back, me
 ## Point Cloud 
 ![image](https://github.com/user-attachments/assets/5deaac5e-c03b-4686-8b67-2314bbcbdf0d)
 
-
-![hippo](https://github.com/user-attachments/assets/47c3e18a-2062-4e62-a294-f097bb7032bc)
-
