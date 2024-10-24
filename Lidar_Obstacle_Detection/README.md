@@ -42,4 +42,6 @@ Through **clustering** we are grouping the segmented point cloud into objects fo
 
 Euclidean clustering involves grouping points based on their proximity to one another. To efficiently perform nearest neighbor searches, a **KD-Tree** data structure is employed. This structure significantly enhances lookup speed from O(n) to O(log(n)), as it optimally partitions the search space. By organizing points into regions within the KD-Tree, you can effectively eliminate the need to calculate distances for potentially thousands of points that are clearly too far away to be relevant, streamlining the clustering process.
 
+### KD-Tree
+A KD-Tree is a binary tree that partitions points by alternating between axes. This systematic separation of space into regions allows for significantly faster nearest neighbor searches, particularly when applied in algorithms like Euclidean clustering. By efficiently organizing data, the KD-Tree reduces the number of points that need to be considered, enhancing overall search performance.
 
