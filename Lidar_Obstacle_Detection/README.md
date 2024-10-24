@@ -40,6 +40,6 @@ Through **clustering** we are grouping the segmented point cloud into objects fo
 ### Euclidean Clustering
 ![image](https://github.com/user-attachments/assets/085ede81-7317-42d6-9b5c-897add694f3e)
 
-Euclidean clustering involves grouping points based on their proximity to one another. To efficiently perform nearest neighbor searches, a KD-Tree data structure is employed. This structure significantly enhances lookup speed from O(n) to O(log(n)), as it optimally partitions the search space. By organizing points into regions within the KD-Tree, you can effectively eliminate the need to calculate distances for potentially thousands of points that are clearly too far away to be relevant, streamlining the clustering process.
+Euclidean clustering involves grouping points based on their proximity to one another. To efficiently perform nearest neighbor searches, a **KD-Tree** data structure is employed. This structure significantly enhances lookup speed from O(n) to O(log(n)), as it optimally partitions the search space. By organizing points into regions within the KD-Tree, you can effectively eliminate the need to calculate distances for potentially thousands of points that are clearly too far away to be relevant, streamlining the clustering process.
 
 
