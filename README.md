@@ -30,7 +30,7 @@ In this project, we begin by establishing a target with specific velocity and po
 
 In the final project, each moving vehicle, except for the ego vehicle, is assigned an unscented Kalman Filter (UKF). Lidar and Radar data for these vehicles are continuously input into their respective UKFs. This data is processed within the UKF framework, allowing for the estimation of each car's position and velocity through predict-update cycles.
 
-The result below depicts a highway scenario. The ego vehicle is represented in green, while other cars are shown in blue. The red spheres above the vehicles indicate Lidar detections, and the purple lines illustrate Radar measurements, including velocity magnitude along the detected angle. The green spheres represent the predicted paths of the cars as estimated by the UKF for the near future.
+The result below depicts a highway scenario. The ego vehicle is represented in green, while other cars are shown in blue. The red spheres above the vehicles indicate Lidar detections, and the purple lines illustrate Radar measurements, including velocity magnitude along the detected angle. The green spheres represent the predicted paths of the cars as estimated by the UKF.
 
 ![ukf](https://github.com/user-attachments/assets/ff6a2c75-e539-4d3c-98b4-92cf3fe60caf)
 
